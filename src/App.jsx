@@ -1,122 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import "./App.css"
+import { useState } from "react"
+import LabelInput from "./components/LabelInput.jsx"
+import SectionInformation from "./components/SectionInformation.jsx"
+import SectionCV from "./components/SectionCV.jsx"
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [userName, setUserName] = useState('Joe Biden');
+  const [email, setEmail] = useState('president@whitehouse.gov');
+  const [phoneNumber, setPhoneNumber] = useState('202-456-1414')
+  const [address, setAddress] = useState('1600 Pennsylvania Avenue NW, Washington')
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+        <SectionInformation 
+          sectionTitle='Personal Detail'
+          id='personal-detail-section'
         >
-          Count is {count}
-        </button>
-      </section>
+           <LabelInput 
+            label="Full Name"
+            inputId="username"
+            inputValue={userName}
+            inputOnChange={
+              e => setUserName(e.target.value)
+            }
+            placeholder="Joe Biden"
+            type="text"
+          />
 
-      <div className="ticks"></div>
+          <LabelInput 
+            label="Email"
+            inputId="email"
+            inputValue={email}
+            inputOnChange={
+              e => setEmail(e.target.value)
+            }
+            placeholder="president@whitehouse.gov"
+            type='email'
+          />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <LabelInput 
+            label="Phone Number"
+            inputId="phone-number"
+            inputValue={phoneNumber}
+            inputOnChange={
+              e => setPhoneNumber(e.target.value)
+            }
+            placeholder="202-456-1414"
+            type='text'
+          />  
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+          <LabelInput 
+            label="Address"
+            inputId="address"
+            inputValue={address}
+            inputOnChange={
+              e => setAddress(e.target.value)
+            }
+            placeholder="1600 Pennsylvania Avenue NW, Washington"
+            type='text'
+          />  
+
+        </SectionInformation>
+
+        <SectionCV
+          userName={userName}
+          email={email}
+          phoneNumber={phoneNumber}
+          address={address}
+          >          
+        </SectionCV>
+
+
+
+
     </>
   )
 }
-
-export default App

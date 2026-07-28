@@ -1,16 +1,23 @@
-# React + Vite
+# CV-Application
+This is a homework of the Oding Project.  
+In this project, I will try using React to create a quasi-commercial front-end App.  
+In this App, people can create a personal CV with concise style.  
+when building this project, following feature will be used:  
+1. Vite & JSX
+2. React component
+3. Passing Data from between components:
+    - Parent -> Child: pops
+    - Child -> Parent: callback function
+    - Components are not directly related: shared state
+4. Render Techniques:
+    - List: *.map*
+    - Conditionally render: *.filter* & ternary expression & *&&*
+    - Key in **Component**
+5. State   
+    - use state to make controlled component
+    - lift state
+6. try use some components from **MUI**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The App will have these functions:
+1. print
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

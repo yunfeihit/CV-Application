@@ -1,0 +1,50 @@
+section {
+    margin: 5px;
+}
+
+section p {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(14, 55, 78);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title > img {
+    height: 34px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.arrow-taggle {
+    transition: transform 0.3s ease;
+}
+
+/* hide/show effect */
+.section-content {
+    overflow: hidden;
+    max-height: 1000px;
+    opacity: 1;
+    transition: 
+        max-height 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.section-hide {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* special format */
+#personal-detail-section {
+    width: 500px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 18px;
+}

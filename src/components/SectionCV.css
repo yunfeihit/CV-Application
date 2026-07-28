@@ -1,0 +1,49 @@
+#section-CV {
+    width: 210mm;
+    min-height: 297mm;
+    background-color: white;
+}
+
+#section-CV-header {
+    height: 45mm;
+    width: 100%;
+    background-color: rgb(14, 55, 78);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#section-CV-header img {
+    width: 24px;
+    filter: brightness(0) invert(1);
+}
+
+#section-CV-header p {
+    color: white;
+}
+
+#section-CV-header > p {
+    font-size: 36px;
+    font-weight: 250;
+    text-align: center;
+}
+
+#section-CV-header-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+#section-CV-header-wrapper p {
+    font-size: 16px;
+    font-weight: 350;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+#section-CV-header-wrapper > div {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
