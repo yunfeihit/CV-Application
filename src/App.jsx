@@ -5,12 +5,15 @@ import SectionDropdownWrapper from "./components/SectionDropdownWrapper.jsx"
 import SectionNestedWrapper from "./components/SectionNestedWrapper.jsx"
 import SectionSub from "./components/SectionSub.jsx"
 import SectionCV from "./components/SectionCV.jsx"
+import {SwitchButton2Vertical, SwitchButton3Horizonal} from "./components/SwitchButton.jsx"
+import SectionCustomize from "./components/SectionCustomize.jsx"
 import educationIcon from "./assets/imgs/education.svg"
 import businessIcon from "./assets/imgs/business.svg"
 
 
 export default function App() {
 
+  //States:
   const [personalInfo, setPersonalInfo] = useState({
     userName: 'Joe Biden',
     email: 'president@whitehouse.gov',
@@ -38,6 +41,13 @@ export default function App() {
     description: 'Practiced law after admission to the Delaware Bar.'
   }])
 
+  const [contentOrCustomize, setContentOrCustomize] = useState('content')
+
+  const handleAlignment = (event, newAlignment) => {
+    setContentOrCustomize(newAlignment);
+  };
+
+  //InnerFunctions:
   function capitalFirstLetter(word) {
     if(!word) return ''
     return word[0].toUpperCase() + word.slice(1)
@@ -46,7 +56,7 @@ export default function App() {
   function createLabelInputsForSetObject(infoObject, setInfoObject) {    
       return Object.entries(infoObject).map(([key, value]) => (
         <LabelInput 
-          key={key}//everytime use '.map', require 'key'
+          key={`${infoObject.id}-${key}`}//everytime use '.map', require 'key'
           label={capitalFirstLetter(key)}
           inputId={key}
           inputValue={value}
@@ -63,8 +73,9 @@ export default function App() {
     )
   }
 
-    //if state is Array(of object), onChange should call 'setState' and only change the corresponding object:
-  function createLabelInputsForSetArray(infoObject, setInfoObject) {       
+  function createLabelInputsForSetArray(infoObject, setInfoObject) {      
+  //if state is Array(of object), onChange should call 'setState' and only change the corresponding object:
+ 
     return Object.entries(infoObject)
       .filter(([key]) => key !== 'id')
       .map(([key, value]) => (
@@ -92,10 +103,21 @@ export default function App() {
     )
   }
   
+
+  //Variables:
   const personalDetailInputEles = createLabelInputsForSetObject(personalInfo, setPersonalInfo);
 
   return (
     <>
+        <section id="switch-button">
+          <SwitchButton2Vertical 
+            topName='Content'
+            bottomName='Customize'
+            alignment={contentOrCustomize}
+            handleAlignment={handleAlignment}
+          />
+        </section>
+
         <section id='all-inputs-wrapper'>
 
           <SectionDropdownWrapper 
