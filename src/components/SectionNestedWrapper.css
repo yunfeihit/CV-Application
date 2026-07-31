@@ -1,0 +1,39 @@
+.wrapper-section {
+    background-color: white;
+    width: 500px;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 18px;
+}
+
+.nested-section-title {
+    display: flex;
+    align-items: center;
+}
+
+.nested-section-title > :nth-child(3) {
+    margin-left: auto;
+}
+
+.nested-section-title > img {
+    height: 34px;
+    margin-right: 5px;
+}
+
+.nested-section-title > p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#experience-section {
+    margin-top: 12px;
+}
+
+/* make addIcon rotate when click */
+.add-icon {
+    transition: transform 0.4s ease;
+}
+
+.rotate {
+    transform: rotate(360deg);
+}

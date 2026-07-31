@@ -1,24 +1,28 @@
-section {
+.dropdown-wrapper-section {
     margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 18px;
+    margin-bottom: 12px;
 }
 
-section p {
+.dropdown-wrapper-section  p {
     font-size: 22px;
     font-weight: 500;
     color: rgb(14, 55, 78);
 }
 
-.section-title {
+.dropdown-section-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.section-title > img {
+.dropdown-section-title > img {
     height: 34px;
 }
 
-.rotate {
+.arrow-rotate {
     transform: rotate(180deg);
 }
 
@@ -44,7 +48,4 @@ section p {
 /* special format */
 #personal-detail-section {
     width: 500px;
-    border-radius: 5px;
-    background-color: white;
-    padding: 18px;
 }

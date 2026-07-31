@@ -1,0 +1,37 @@
+.sub-section {
+    padding: 12px 0 2px 0;
+}
+
+.sub-section-title {
+    display: flex;
+    align-items: center;
+    border-top: 1px dashed rgb(224, 224, 225);
+    padding-top: 8px;
+}
+
+.sub-section-title > :nth-child(2) {
+    margin-left: auto;
+}
+
+.sub-section-title > img {
+    height: 34px;
+}
+
+.sub-section-title > p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* gird */
+.sub-section-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+.sub-section-content > :nth-child(-n + 2),
+.sub-section-content > :nth-child(n + 5) {
+    grid-column: span 2;
+}
+

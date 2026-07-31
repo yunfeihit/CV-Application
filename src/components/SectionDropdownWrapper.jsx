@@ -1,8 +1,8 @@
-import './SectionInformation.css'
+import './SectionDropdownWrapper.css'
 import arrowDown from '../assets/imgs/keyboard_arrow_down_36dp.svg'
 import { useState } from 'react'
 
-export default function SectionInformation({ 
+export default function SectionDropdownWrapper({ 
     id,
     sectionTitle,
     children
@@ -11,10 +11,10 @@ export default function SectionInformation({
 
     return (
         <section 
-            className='section-information'
             id={id}
+            className='dropdown-wrapper-section'
         >
-            <div className="section-title">
+            <div className="dropdown-section-title">
                 <p>{sectionTitle}</p>
                 <img 
                     src={arrowDown} 
