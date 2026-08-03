@@ -8,3 +8,13 @@ body {
     align-items: flex-start;
     gap: 12px;
 }
+
+#customize-section,
+#all-inputs-wrapper
+{
+    width: 500px
+}
+
+.hide {
+    display: none;
+}

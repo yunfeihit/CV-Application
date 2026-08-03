@@ -33,12 +33,13 @@ function SwitchButton2Vertical({
   );
 }
 
-function SwitchButton3Horizonal({leftName, middleName, rightName}) {
-  const [alignment, setAlignment] = useState('left');
-
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
+function SwitchButton3Horizonal({
+  leftName, 
+  middleName, 
+  rightName,
+  alignment,
+  handleAlignment
+}) {
 
   return (
     <ToggleButtonGroup
@@ -46,21 +47,25 @@ function SwitchButton3Horizonal({leftName, middleName, rightName}) {
       exclusive
       onChange={handleAlignment}
     >
+
+
       <ToggleButton 
         className='toggle-btn'
-        value="left"
+        value={leftName}
       >
         {leftName}
       </ToggleButton>
+
       <ToggleButton 
         className='toggle-btn'
-        value="middle"
+        value={middleName}
       >
         {middleName}
       </ToggleButton>
-            <ToggleButton 
+
+       <ToggleButton 
         className='toggle-btn'
-        value="right"
+        value={rightName}
       >
         {rightName}
       </ToggleButton>

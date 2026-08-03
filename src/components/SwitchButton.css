@@ -1,8 +1,33 @@
-.toggle-btn {
+.MuiToggleButton-root.toggle-btn {
     background-color: white;
     border-radius: 5px;
     text-transform: none;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 4px;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.MuiToggleButton-root.toggle-btn.Mui-selected  {
+    background-color: rgb(243, 244, 246);
+}
+
+#customize-section > :nth-child(3) > div > button {
+    width: 120px;
+    height: 48px;
+    line-height: 24px;
+}
+
+#customize-section > :nth-child(3) > div > :nth-child(1) {
+    font-family: "Inter";
+}
+
+#customize-section > :nth-child(3) > div > :nth-child(2) {
+    font-size: 16px;
+    line-height: 16px;
+    font-family: 'Cormorant-Garamond'
+}
+
+#customize-section > :nth-child(3) > div > :nth-child(3) {
+    font-family: 'JosefinSans';
 }

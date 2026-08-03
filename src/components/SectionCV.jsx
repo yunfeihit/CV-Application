@@ -41,12 +41,20 @@ function ExperienceSub({experienceInfo}) {
 export default function SectionCV({
     personalInfo,
     educationInfos,
-    experienceInfos
+    experienceInfos,
+    font,
+    color
 }) {
     
     return (
-        <section id="section-CV">
-            <div id="section-CV-header">
+        <section 
+        id="section-CV"
+        style={{fontFamily: font}}
+        >
+            <div 
+                id="section-CV-header"
+                style={{backgroundColor: color}}
+            >
                 <p>{personalInfo.userName}</p>
                 <div id="section-CV-header-wrapper">
                     <div>

@@ -43,11 +43,31 @@ export default function App() {
 
   const [contentOrCustomize, setContentOrCustomize] = useState('content')
 
-  const handleAlignment = (event, newAlignment) => {
-    setContentOrCustomize(newAlignment);
-  };
+  const [font, setFont] = useState('Inter')
+
+  const [color, setColor] = useState('rgb(14, 55, 78)')
+
+  const [pageAlignment, setPageAlignment] = useState('top');
 
   //InnerFunctions:
+  const handle2VerticalAlignment = (event, newAlignment) => {
+    if(newAlignment !== null) {
+      setContentOrCustomize(newAlignment);
+    }
+  }
+
+  const handleFontsAlignment = (event, newAlignment) => {
+    if(newAlignment !== null) {
+      setFont(newAlignment);
+    }
+  }
+
+  const handleChangePageAlignment = (event, newAlignment) => {
+    if(newAlignment !== null) {
+      setPageAlignment(newAlignment);
+    }
+  }
+
   function capitalFirstLetter(word) {
     if(!word) return ''
     return word[0].toUpperCase() + word.slice(1)
@@ -114,12 +134,28 @@ export default function App() {
             topName='Content'
             bottomName='Customize'
             alignment={contentOrCustomize}
-            handleAlignment={handleAlignment}
+            handleAlignment={handle2VerticalAlignment}
           />
         </section>
 
-        <section id='all-inputs-wrapper'>
-
+        <SectionCustomize 
+          className={
+            contentOrCustomize === 'content'  && 'hide'
+          }
+          font={font}
+          handleChangeFont={handleFontsAlignment}
+          color={color}
+          handleChangeColor={setColor}
+          pageAlignment={pageAlignment}
+          handleChangePageAlignment={handleChangePageAlignment}
+        />
+        
+        <section 
+          id='all-inputs-wrapper'
+          className={
+            contentOrCustomize === 'customize'  && 'hide'
+          }
+        >
           <SectionDropdownWrapper 
             sectionTitle='Personal Detail'
             id='personal-detail-section'
@@ -207,10 +243,14 @@ export default function App() {
 
         </section>
 
+
+
         <SectionCV
           personalInfo={personalInfo}
           educationInfos={educationInfos}
           experienceInfos={experienceInfos}
+          font={font}
+          color={color}
           >          
         </SectionCV>
     </>
