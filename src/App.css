@@ -1,5 +1,7 @@
 body {
     background-color: rgb(243, 244, 246);
+    padding-top: 6px;
+    padding-bottom: 12px;
 }
 
 #root {

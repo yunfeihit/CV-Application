@@ -8,7 +8,6 @@
 
 #section-CV-header {
     height: 45mm;
-    width: 100%;
     background-color: rgb(14, 55, 78);
     display: flex;
     flex-direction: column;
@@ -40,14 +39,17 @@
 #section-CV-header-wrapper p {
     font-size: 16px;
     font-weight: 350;
-    white-space: nowrap;
+    white-space: normal;
     overflow: visible;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 #section-CV-header-wrapper > div {
     display: flex;
     gap: 2px;
     align-items: center;
+    min-width: 0;
 }
 
 /* main content */
@@ -81,9 +83,8 @@
         ". majorsOrDescription majorsOrDescription"
 }
 
-.education-sub,
-.experience-sub
- > * {
+.education-sub > *,
+.experience-sub > * {
     font-weight: 300;
     white-space: normal;
     overflow: hidden;
@@ -124,3 +125,127 @@
 #section-CV-main > p {
     font-size: 20px;
 }
+
+
+/* variable page layout changed by state 'pageAlignment' */
+/* Header-left layout */
+.cv-container.left {
+    display: flex;
+}
+
+.cv-container.left > #section-CV-main {
+    padding: 10mm 5mm;
+}
+
+.cv-container.left > #section-CV-header {
+    width: 50mm;
+    height: 297mm;
+}
+
+.cv-container.left > #section-CV-header > p {
+    font-size: 32px;
+    overflow-wrap: anywhere;
+    min-width: 0;
+    line-height: 39px;
+}
+
+.cv-container.left > #section-CV-header > #section-CV-header-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-container.left > #section-CV-header > #section-CV-header-wrapper p{
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+.cv-container.left > #section-CV-header > #section-CV-header-wrapper > div {
+    margin: 4px 0;
+    padding: 0 4px;
+    width: 50mm;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.cv-container.left > #section-CV-header > #section-CV-header-wrapper > div p {
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+
+.cv-container.left .education-sub,
+.cv-container.left .experience-sub {
+    grid-template-columns: repeat(2, 45mm) 1fr;
+    font-size: 17px;
+ }
+
+/* Header-right layout */
+.cv-container.right {
+    display: flex;
+}
+
+.cv-container.right > #section-CV-main {
+    padding: 10mm 5mm;
+}
+
+.cv-container.right > :nth-child(1) {
+    order: 2;
+}
+
+.cv-container.right > :nth-child(2) {
+    order: 1;
+}
+
+.cv-container.right > #section-CV-header {
+    width: 50mm;
+    height: 297mm;
+}
+
+.cv-container.right > #section-CV-header > p {
+    font-size: 32px;
+    overflow-wrap: anywhere;
+    min-width: 0;
+    line-height: 39px;
+}
+
+.cv-container.right > #section-CV-header > #section-CV-header-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-container.right > #section-CV-header > #section-CV-header-wrapper p{
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+.cv-container.right > #section-CV-header > #section-CV-header-wrapper > div {
+    margin: 4px 0;
+    padding: 0 4px;
+    width: 50mm;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.cv-container.right > #section-CV-header > #section-CV-header-wrapper > div p {
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+
+.cv-container.right .education-sub,
+.cv-container.right .experience-sub {
+    grid-template-columns: repeat(2, 45mm) 1fr;
+    font-size: 17px;
+ }

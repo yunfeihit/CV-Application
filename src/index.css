@@ -39,4 +39,20 @@ body {
   font-weight: 100 900;
 }
 
+@media print {
+  body * {
+    visibility: hidden;
+  }
 
+  #section-CV, 
+  #section-CV * {
+    visibility: visible;
+  }
+
+  #section-CV {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+}

@@ -136,6 +136,10 @@ export default function App() {
             alignment={contentOrCustomize}
             handleAlignment={handle2VerticalAlignment}
           />
+
+          <button
+            onClick={() => window.print()}
+          >Print CV</button>
         </section>
 
         <SectionCustomize 
@@ -246,6 +250,7 @@ export default function App() {
 
 
         <SectionCV
+          className={`cv-container ${pageAlignment}`}
           personalInfo={personalInfo}
           educationInfos={educationInfos}
           experienceInfos={experienceInfos}

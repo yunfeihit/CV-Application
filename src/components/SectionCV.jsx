@@ -39,6 +39,7 @@ function ExperienceSub({experienceInfo}) {
 
 
 export default function SectionCV({
+    className,
     personalInfo,
     educationInfos,
     experienceInfos,
@@ -48,6 +49,7 @@ export default function SectionCV({
     
     return (
         <section 
+        className={className}
         id="section-CV"
         style={{fontFamily: font}}
         >

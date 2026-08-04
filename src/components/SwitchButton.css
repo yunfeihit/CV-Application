@@ -31,3 +31,32 @@
 #customize-section > :nth-child(3) > div > :nth-child(3) {
     font-family: 'JosefinSans';
 }
+
+/* print button: */
+#switch-button {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#switch-button > :nth-child(2) {
+    font-weight: 500;
+    height: 48px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(198, 198, 198);
+    font-size: 16px;
+    color: rgb(67, 67, 67);
+    transition: 
+        font-size 0.2s ease,
+        transform 0.2s ease;
+}
+
+#switch-button > :nth-child(2):hover {
+    font-size: 18px;
+}
+
+#switch-button > :nth-child(2):active {
+    font-size: 18px;
+    transform: translateY(2px);
+}
